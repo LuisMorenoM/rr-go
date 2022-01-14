@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 //Components
-import { Title } from '../../shared/components'
+import { Title, Button } from '../../shared/components'
 
 //actions
 import { getWeatherAction } from './state/reservedActions'
@@ -37,6 +37,9 @@ const Reserved = (props) => {
                             <div>
                                 Today is {props.weather.value}
                             </div>
+                        )}
+                        {!props.weather.isFetching && (
+                            <Button onClick={props.getWeatherAction}>Get Weather Manually</Button>
                         )}
                     </div> 
                 </Basic.Body>

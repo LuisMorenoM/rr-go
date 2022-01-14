@@ -1,6 +1,8 @@
 import React from 'react'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
+import thunk from 'redux-thunk'
+import { ConnectedRouter } from 'connected-react-router'
 import { render as rtlRender } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 // import '@testing-library/jest-dom'; // jest-dom is imported on src/setupTests.js
@@ -14,12 +16,18 @@ const render = (
     ui, 
     {
         initialState, 
-        store = createStore(reducers(history), initialState), 
+        store = createStore(reducers(history), initialState, applyMiddleware(thunk)), 
         ...renderOptions
     } = {}
 ) => {
     const Wrapper = ({ children }) => {
-        return <Provider store={store}>{children}</Provider>
+        return (
+            <Provider store={store}>
+                <ConnectedRouter history={history}>
+                    {children}
+                </ConnectedRouter>
+            </Provider>
+        )
     }
 
     return rtlRender(ui, { wrapper: Wrapper, ...renderOptions })

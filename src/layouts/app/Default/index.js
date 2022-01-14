@@ -6,9 +6,6 @@ import { withRouter } from 'react-router-dom'
 // styles
 import styles from './styles/default.module.scss';
 
-//Actions
-import { togglePrivate } from '../../../shared/features/private/state/privateActions'
-
 // components
 import { NavBar } from '../components'
 
@@ -19,11 +16,11 @@ const DefaultLayoutComponent = (props) => {
                 {/* CONTAINER */}
                 <div className={styles.container}>
                     {/* HEADER */}
-                    <div className={styles.header}>
-                        <NavBar isPrivate={props.isPrivate} togglePrivate={props.togglePrivate} />
+                    <div className={styles.header} data-testid={'default_header'}>
+                        <NavBar />
                     </div>
                     {/* BODY */}
-                    <div className={styles.body}>
+                    <div className={styles.body} data-testid={'default_body'}>
                         {props.children}
                     </div>
                     {/* FOOTER */}
@@ -34,21 +31,16 @@ const DefaultLayoutComponent = (props) => {
 }
 
 DefaultLayoutComponent.propTypes = {
-    children: PropTypes.node.isRequired,
-    isPrivate: PropTypes.bool.isRequired,
-    togglePrivate: PropTypes.func.isRequired
+    children: PropTypes.node.isRequired
 }
 
 const mapStateToProps = (state) => {
-	let { privateReducer } = state;
     return {
-        isPrivate: privateReducer.isPrivate
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-        togglePrivate: param => dispatch(togglePrivate(param))
 	}
 }
 

@@ -42,7 +42,7 @@ NavBarComponent.propTypes = {
 }
 
 const mapStateToProps = (state) => {
-	let { privateReducer } = state;
+	const { privateReducer } = state;
     return {
         isPrivate: privateReducer.isPrivate
     }

@@ -2,7 +2,7 @@
 import { randomFromArray } from '../../shared/utils/functions'
 
 //lets simulate we are doing the request against a real API. The "API" will return randomly 1 value of the following array.
-let weather = ['sunny', 'cloudy', 'rainy']
+const weather = ['sunny', 'cloudy', 'rainy']
 
 export const getWeather = async () => {
     // const requestOptions = {
@@ -12,14 +12,14 @@ export const getWeather = async () => {
     //     }
     // }
     
-    // let response = await fetch(`apiUrl`, requestOptions);
-    // let data = await response.json();
+    // const response = await fetch(`apiUrl`, requestOptions);
+    // const data = await response.json();
 
     // lets simulate a delay
     await new Promise(r => setTimeout(r, 2000));
 
-    let data = randomFromArray(weather) //simulating await response.json()
-    let responseOk = true //simulating response.ok
+    const data = randomFromArray(weather) //simulating await response.json()
+    const responseOk = true //simulating response.ok
 
     if (responseOk) {
         return({status:true, value: data})

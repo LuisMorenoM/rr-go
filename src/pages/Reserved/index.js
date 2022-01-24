@@ -54,7 +54,7 @@ Reserved.propTypes = {
 }
 
 const mapStateToProps = (state) => {
-    let { reservedReducer } = state
+    const { reservedReducer } = state
     return {
         weather: reservedReducer.weather
     }

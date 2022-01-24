@@ -11,7 +11,7 @@ export const getWeatherAction = () => {
             type: reservedConstants.RESERVED_WEATHER_REQUEST
         })
 
-        let actualWeather = await getWeather().catch((e) => {
+        const actualWeather = await getWeather().catch((e) => {
             dispatch({
                 type: reservedConstants.RESERVED_WEATHER_FAILURE
             })

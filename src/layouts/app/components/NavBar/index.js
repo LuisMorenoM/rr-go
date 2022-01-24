@@ -13,10 +13,10 @@ import { Button } from '../../../../shared/components'
 //style
 import styles from './styles/navbar.module.scss'
 
-const NavBarComponent = (props) => {
+const NavBarComponent = ({ togglePrivate, isPrivate }) => {
 
     const triggerToggle = () => {
-        props.togglePrivate(!props.isPrivate)
+        togglePrivate(!isPrivate)
     }
 
     return (
@@ -25,7 +25,7 @@ const NavBarComponent = (props) => {
                 <Link to={`/`} className={styles.item}>First</Link>
                 <Link to={`/second`} className={styles.item}>Second</Link>
                 <Link to={`/reserved`} className={styles.item}>Reserved</Link>
-                {props.isPrivate && (
+                {isPrivate && (
                     <>
                         <span>PRIVATE ON</span>
                         <Button onClick={() => triggerToggle()}>Remove private</Button>

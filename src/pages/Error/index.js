@@ -11,7 +11,7 @@ import { Basic } from '../../layouts/page'
 //styles
 import styles from './styles/error.module.scss'
 
-const Error = (props) => {
+const Error = ({}) => {
 
     return (
         <Basic>

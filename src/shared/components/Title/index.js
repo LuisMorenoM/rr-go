@@ -5,12 +5,10 @@ import { Link } from 'react-router-dom'
 //style
 import styles from './styles/title.module.scss'
 
-export const Title = (props) => {
+export const Title = ({ children }) => {
 
     return (
-        <>
-            <h1 className={styles.core}>{props.children}</h1>
-        </>
+        <h1 className={styles.core}>{children}</h1>
     )
 }
 

@@ -14,10 +14,10 @@ import { Basic } from '../../layouts/page'
 //styles
 import styles from './styles/reserved.module.scss'
 
-const Reserved = (props) => {
+const Reserved = ({ getWeatherAction, weather }) => {
 
     useEffect(() => {
-        props.getWeatherAction()
+        getWeatherAction()
     }, [])
 
     return (
@@ -30,16 +30,16 @@ const Reserved = (props) => {
                 </Basic.Header>
                 <Basic.Body>
                     <div className={styles.body}>
-                        {props.weather.isFetching && (
+                        {weather.isFetching && (
                             <div>Fetching...</div>
                         )}
-                        {props.weather.value && (
+                        {weather.value && (
                             <div>
-                                Today is {props.weather.value}
+                                Today is {weather.value}
                             </div>
                         )}
-                        {!props.weather.isFetching && (
-                            <Button onClick={props.getWeatherAction}>Get Weather Manually</Button>
+                        {!weather.isFetching && (
+                            <Button onClick={getWeatherAction}>Get Weather Manually</Button>
                         )}
                     </div> 
                 </Basic.Body>

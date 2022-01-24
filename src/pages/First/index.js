@@ -14,10 +14,10 @@ import styles from './styles/first.module.scss'
 //Actions
 import { togglePrivate } from '../../shared/features/private/state/privateActions'
 
-const First = (props) => {
+const First = ({ togglePrivate, isPrivate }) => {
 
     const triggerClick = () => {
-        props.togglePrivate(!props.isPrivate)
+        togglePrivate(!isPrivate)
     }
 
     return (
@@ -32,7 +32,7 @@ const First = (props) => {
                     <div className={styles.body}>
                         First page body
                         <Button onClick={() => triggerClick()} >
-                            {props.isPrivate ? 'Remove private' : 'Go private'}
+                            {isPrivate ? 'Remove private' : 'Go private'}
                         </Button>
                     </div>
                 </Basic.Body>

@@ -9,7 +9,7 @@ import styles from './styles/default.module.scss';
 // components
 import { NavBar } from '../components'
 
-const DefaultLayoutComponent = (props) => {
+const DefaultLayoutComponent = ({ children }) => {
     return (
         <React.StrictMode>
             <div className={styles.core}>
@@ -21,7 +21,7 @@ const DefaultLayoutComponent = (props) => {
                     </div>
                     {/* BODY */}
                     <div className={styles.body} data-testid={'default_body'}>
-                        {props.children}
+                        {children}
                     </div>
                     {/* FOOTER */}
                 </div>

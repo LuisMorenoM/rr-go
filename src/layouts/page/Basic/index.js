@@ -4,14 +4,14 @@ import PropTypes from 'prop-types'
 // styles
 import styles from './styles/basic.module.scss';
 
-export const Basic = (props) => (
+export const Basic = ({ children }) => (
   <div className={styles.core}>
-      {props.children}
+      {children}
   </div>    
 )
 
-Basic.Header = (props) => <div className={styles.header}>{props.children}</div>
-Basic.Body = (props) => <div className={styles.body}>{props.children}</div>
+Basic.Header = ({ children }) => <div className={styles.header}>{children}</div>
+Basic.Body = ({ children }) => <div className={styles.body}>{children}</div>
 
 Basic.propTypes = {
     children: PropTypes.node.isRequired

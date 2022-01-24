@@ -11,7 +11,7 @@ import { Basic } from '../../layouts/page'
 //styles
 import styles from './styles/second.module.scss'
 
-const Second = (props) => {
+const Second = ({}) => {
 
     return (
         <Basic>

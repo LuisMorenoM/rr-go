@@ -4,17 +4,15 @@ import PropTypes from 'prop-types'
 //style
 import styles from './styles/button.module.scss'
 
-export const Button = (props) => {
+export const Button = ({ children, onClick }) => {
 
     return (
-        <>
-            <button 
-                className={styles.core}
-                onClick={props.onClick}
-            >
-                {props.children}
-            </button>
-        </>
+        <button 
+            className={styles.core}
+            onClick={onClick}
+        >
+            {children}
+        </button>
     )
 }
 

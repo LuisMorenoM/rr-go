@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'connected-react-router'
 
+import ErrorBoundary from './errorBoundary'
 
 // Redux
 import { store, history } from './state/redux/configureStore'
@@ -20,9 +21,11 @@ import './styles/_index.scss'
 ReactDOM.render(
   <Provider store={store}>
       <ConnectedRouter history={history}>
+        <ErrorBoundary>
           <DefaultLayout>
               <Router />
           </DefaultLayout>
+        </ErrorBoundary>
       </ConnectedRouter>
   </Provider>,
   document.getElementById('root')

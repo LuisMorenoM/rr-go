@@ -2,6 +2,6 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Looking for TypeScript
+### With TypeScript
 
-https://github.com/LuisMorenoM/rr-go-ts
+[Repo](https://github.com/LuisMorenoM/rr-go-ts).
